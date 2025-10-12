@@ -6,10 +6,14 @@ void main() {
 
   const int passing = 50;
   // anonymous function 
+  // iterable is a collection of elements, doesn't store all elements in memory
   Iterable<int> passingScoresCheck = scores.where((score) => score >= passing);
 
-  // convert the Iterable to a List<int> as requested for the output[cite: 142].
+  // convert the Iterable to a List<int> 
   List<int> passingStudents = passingScoresCheck.toList();
+
+  // or just create a direct list 
+  // List<int> passingStudents = scores.where((score) => score >= passing).toList();
 
   int studentsPassedCount = passingStudents.length;
 
