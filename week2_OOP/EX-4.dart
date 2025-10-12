@@ -42,15 +42,15 @@ class Order {
 
 void main() {
   Map<String, double> catalog = {
-    "Apple": 2.0,
-    "Banana": 1.5,
+    "Book": 2.5,
+    "Pen": 1,
   };
 
-  var myAddress = Address(street: "123 Main St", city: "Phnom Penh", zipCode: "12000");
+  var myAddress = Address(street: "Main St", city: "Takhmao", zipCode: "12000");
 
   // Order with delivery
   var order1 = Order(
-    products: {"Apple": 5, "Banana": 3}, 
+    products: {"Book": 5, "Pen": 3}, 
     deliveryMethod: DeliveryMethod.delivery,
     deliveryAddress: myAddress,
     catalog: catalog,
@@ -58,13 +58,13 @@ void main() {
 
   // Order pickup
   var order2 = Order(
-    products: {"Apple": 5},
+    products: {"Pen": 5},
     deliveryMethod: DeliveryMethod.pickup,
     catalog: catalog,
   );
 
-  print("Order1 total: \$${order1.computeTotal()}"); // 5*2 + 3*1.5 + 5 = 18.5
-  print("Order2 total: \$${order2.computeTotal()}"); // 5*2 = 10
+  print("Order1 total: \$${order1.computeTotal()}"); // 20.5
+  print("Order2 total: \$${order2.computeTotal()}"); // 5
 }
 
 
