@@ -74,3 +74,6 @@ void main() {
   print("final result");
   r.showResult();
 }
+//enum direction
+//enum action
+//class Robot with overide to string to return some defualt value of the robot initial value that is initialize in the constructor
