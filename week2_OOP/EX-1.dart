@@ -31,7 +31,7 @@ class Employee {
   // Getters
   String get name => _name;
   double get baseSalary => _baseSalary;
-  List<Skill> get skills => List.unmodifiable(_skills);
+  List<Skill> get skills => _skills;
   Address get address => _address;
   int get yearOfExperience => _yearOfExperience;
 
