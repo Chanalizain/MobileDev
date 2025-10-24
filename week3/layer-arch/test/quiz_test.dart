@@ -12,17 +12,22 @@ main() {
   Quiz quiz = Quiz(questions: [q1, q2]);
   Player player = Player("Liza");
 
+  final int maxPossibleScore = 
+    (q1.goodChoice.values.first) + (q2.goodChoice.values.first); 
   test('All answers are good (100%)', () {
     // Create the answer here
-    Answer a1 = Answer(question: q1, answerChoice: "4", player:"Liza");
-    Answer a2 = Answer(question: q2, answerChoice: "5",player:"Liza");
+    Answer a1 = Answer(question: q1, answerChoice: "4");
+    Answer a2 = Answer(question: q2, answerChoice: "5");
 
-    player.answers = [a1, a2];
-    quiz.addPlayer(player);
+    final Submission submission = Submission(
+        player: player,
+        quiz: quiz,
+        answers: [a1, a2],
+      );
 
     // Check something
-    expect(player.getScoreInPercentage(quiz.questions), equals(100));
-    expect(player.getScoreInPoint(), equals(10));
+    expect(submission.getScoreInPercentage(), equals(100));
+    expect(submission.getScoreInPoint(), equals(10));
   });
 
   
