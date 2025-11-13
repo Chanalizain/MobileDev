@@ -3,25 +3,28 @@ import "package:flutter/material.dart";
 void main(){
   runApp(
     MaterialApp(
-      home: Center(
-        child: Column(
-          children: [
-            NewWidget(icon: Icons.travel_explore_sharp, text: 'travelling', color: Colors.green),
-            SizedBox(height: 30,),
-            NewWidget(icon: Icons.travel_explore_sharp, text: 'travelling', color: Colors.green),
-          ],
-        )
-      )
+      home: Scaffold(
+        body: Padding(
+          padding: EdgeInsets.all(30),
+          child: Column(
+            children: [
+              HobbyCard(icon: Icons.travel_explore, text: 'travelling'),
+              HobbyCard(icon: Icons.access_time, text: 'time', color: Colors.blueGrey,),
+              HobbyCard(icon: Icons.add_a_photo, text: 'upload')
+            ],
+          ),
+        ),
+      ),
     )
   );
 }
 
-class NewWidget extends StatelessWidget {
-  const NewWidget({
+class HobbyCard extends StatelessWidget {
+  const HobbyCard({
     super.key,
     required this.icon,
     required this.text,
-    required this.color
+    this.color = Colors.blue
   });
   final String text;
   final Color color;
@@ -49,6 +52,7 @@ class NewWidget extends StatelessWidget {
           )
         ],
       ),
+      
       );
   }
 }
