@@ -1,4 +1,4 @@
-name: week5_flutter_stateless_widget
+name: week6_flutter_stateful_widget
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -59,16 +59,18 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-  - assets/images/ex3/dart.png
-  - assets/images/ex3/flutter.png
-  - assets/images/ex3/firebase.png
-  - assets/images/ex4/cloudy.png
-  - assets/images/ex4/sunny.png
-  - assets/images/ex4/sunnyCloudy.png
-  - assets/images/ex4/veryCloudy.png
-  
-  
+    - assets/images/dice/dice-1.png
+    - assets/images/dice/dice-2.png
+    - assets/images/dice/dice-3.png
+    - assets/images/dice/dice-4.png
+    - assets/images/dice/dice-5.png
+    - assets/images/dice/dice-6.png
 
+    - assets/images/seasons/winter.png
+    - assets/images/seasons/spring.png
+    - assets/images/seasons/summer.png
+    - assets/images/seasons/autumn.png
+    
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
