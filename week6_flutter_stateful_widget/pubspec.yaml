@@ -70,6 +70,13 @@ flutter:
     - assets/images/seasons/spring.png
     - assets/images/seasons/summer.png
     - assets/images/seasons/autumn.png
+
+    - assets/images/w4-s2/bird.jpg
+    - assets/images/w4-s2/insect.jpg
+    - assets/images/w4-s2/bird2.jpg
+    - assets/images/w4-s2/girl.jpg
+    - assets/images/w4-s2/man.jpg
+
     
 
   # An image asset can refer to one or more resolution-specific "variants", see
