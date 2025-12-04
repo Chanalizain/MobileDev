@@ -10,7 +10,7 @@ class ProfileApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    List<Widget> tileWidgets = profileData.tiles.map((tile) {
+    List<ProfileTile> tileWidgets = profileData.tiles.map((tile) {
       return ProfileTile(
         tileData: tile,
       );

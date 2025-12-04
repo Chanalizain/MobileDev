@@ -14,22 +14,22 @@ class Expenses extends StatefulWidget {
 class _ExpensesState extends State<Expenses> {
   final List<Expense> _registeredExpenses = initialExpenses;
 
-  void _addExpense(Expense expense) {
-    setState(() {
-      _registeredExpenses.add(expense);
-    });
-  }
-
-  void _openAddExpenseOverlay() {
-    showModalBottomSheet(
+  void _openAddExpenseOverlay() async{
+    final Expense? newExpense = await showModalBottomSheet<Expense>(
       context: context,
-      isScrollControlled: true, // Allows the modal to take full screen height if needed
-      builder: (ctx) => NewExpense(onAddExpense: _addExpense), 
+      isScrollControlled: true, 
+      // builder: (ctx) => NewExpense(onAddExpense: _addExpense), 
+      builder: (ctx) => NewExpense(), 
     );
+    if (newExpense != null) {
+        setState(() {
+            _registeredExpenses.add(newExpense);
+        });
+    }  
   }
+  
 
-  @override
-  Widget build(BuildContext context) {
+  @override  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 200, 218, 253),
       appBar: AppBar(
