@@ -43,10 +43,25 @@ class _NewItemState extends State<NewItem> {
 
   void onReset() {
     // Will be implemented later - Reset all fields to the initial values
+    _nameController.clear();// _nameContriller.text = '';
+    _quantityController.text = defaultQuantity.toString();
+    setState(() {
+      _selectedCategory = defaultCategory;
+    });
   }
 
   void onAdd() {
-    // Will be implemented later - Create and return the new grocery
+    // Create and return the new grocery
+    final newItem = Grocery(
+      id: DateTime.now().toString(),
+      name: _nameController.text,
+      //convert string to int
+      quantity: int.tryParse(_quantityController.text) ?? 1,
+      category: _selectedCategory,
+    );
+
+    Navigator.pop(context, newItem);
+    
   }
 
   @override
@@ -73,10 +88,23 @@ class _NewItemState extends State<NewItem> {
                   ),
                 ),
                 const SizedBox(width: 8),
+        
                 Expanded(
                   child: DropdownButtonFormField<GroceryCategory>(
                     initialValue: _selectedCategory,
-                    items: [  ],
+                    items: [
+                      for (final category in GroceryCategory.values)
+                      DropdownMenuItem(
+                        value: category,
+                        child: Row(
+                          children: [
+                            Container(color: category.color, width: 15, height: 15,),
+                            SizedBox(width: 10,),
+                            Text(category.name), 
+                          ],
+                        ),
+                      ),
+                    ],
                     onChanged: (value) {
                       if (value != null) {
                         setState(() {
@@ -92,7 +120,10 @@ class _NewItemState extends State<NewItem> {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                TextButton(onPressed: onReset, child: const Text('Reset')),
+                TextButton(
+                  onPressed: onReset, 
+                  child: const Text('Reset')
+                ),
                 ElevatedButton(
                   onPressed: onAdd,
                   child: const Text('Add Item'),
