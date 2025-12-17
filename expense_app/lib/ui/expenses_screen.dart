@@ -27,6 +27,11 @@ class _ExpensesState extends State<Expenses> {
         });
     }  
   }
+  void _removeExpense(Expense expense) {
+    setState(() {
+      _registeredExpenses.remove(expense);
+    });
+  }
   
 
   @override  Widget build(BuildContext context) {
@@ -70,7 +75,8 @@ class _ExpensesState extends State<Expenses> {
             
             Expanded( // Expanded is required because ListView.builder needs bounded height
               child: ExpensesList(
-                expenses: _registeredExpenses, 
+                expenses: _registeredExpenses,
+                onRemoveExpense: _removeExpense, 
               ),
             ),
           ],
