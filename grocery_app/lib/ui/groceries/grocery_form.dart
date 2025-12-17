@@ -94,16 +94,16 @@ class _NewItemState extends State<NewItem> {
                     initialValue: _selectedCategory,
                     items: [
                       for (final category in GroceryCategory.values)
-                      DropdownMenuItem(
-                        value: category,
-                        child: Row(
-                          children: [
-                            Container(color: category.color, width: 15, height: 15,),
-                            SizedBox(width: 10,),
-                            Text(category.name), 
-                          ],
+                        DropdownMenuItem(
+                          value: category,
+                          child: Row(
+                            children: [
+                              Container(color: category.color, width: 15, height: 15,),
+                              SizedBox(width: 10,),
+                              Text(category.name), 
+                            ],
+                          ),
                         ),
-                      ),
                     ],
                     onChanged: (value) {
                       if (value != null) {
