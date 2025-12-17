@@ -56,6 +56,8 @@ class _NewExpenseState extends State<NewExpense> {
                       builder: (ctx) => AlertDialog(
                         title: const Text('Invalid Input'),
                         content: const Text('Please ensure a valid title, amount, and date were entered.'),
+                        //should check for a few different mistakes. not one for every mistake
+                        //try to separate the validation from the action to different files
                         actions: [
                           TextButton(
                             onPressed: () => Navigator.pop(ctx),
@@ -164,7 +166,7 @@ class _NewExpenseState extends State<NewExpense> {
               ),
               
               ElevatedButton(
-                onPressed: onsaveExpense,
+                onPressed: onSaveExpense,
                 child: const Text('Save Expense'),
               ),
             ],
